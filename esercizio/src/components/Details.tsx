@@ -34,17 +34,22 @@ const Details = () => {
     }, [])
 
     return (
+
         <Container>
-            <Card className='my-2'>
-                <Card.Img variant="top" src={articolo?.imageUrl} height={330} />
-                <Card.Body>
-                    <Card.Title className='text-dark'>{articolo?.title}</Card.Title>
-                    <Card.Text className='text-dark'>{articolo?.summary}
-                    </Card.Text>
-                    <Link to={'/'} > <Button variant="primary">Torna alla Home!</Button></Link>
-                </Card.Body>
-            </Card>
+            {articolo &&
+                <Card className='my-2'>
+                    <Card.Img variant="top" src={articolo?.imageUrl} height={330} />
+                    <Card.Body>
+                        <Card.Title className='text-dark'>{articolo?.title}</Card.Title>
+                        <Card.Text className='text-dark'>{articolo?.summary}
+                        </Card.Text>
+                        <Link to={'/'} > <Button variant="primary">Torna alla Home!</Button></Link>
+                    </Card.Body>
+                </Card>
+            }
         </Container>
+
+
     );
 }
 
