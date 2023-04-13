@@ -3,15 +3,12 @@ import Card from 'react-bootstrap/esm/Card';
 import Button from 'react-bootstrap/Button';
 import { News } from '../interface/News';
 import { Link } from 'react-router-dom'
-import { useNavigate } from 'react-router-dom';
 
 interface SingleBookProps {
     news: News
 }
 
 const SingleNews = (props: SingleBookProps) => {
-
-    const navigate = useNavigate()
     return (
         <Col xs={6} md={4} lg={3}>
             <Card style={{ width: '13rem', height: '20rem' }} className='my-2'>

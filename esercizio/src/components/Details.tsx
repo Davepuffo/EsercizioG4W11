@@ -11,7 +11,7 @@ const Details = () => {
     const params = useParams()
     console.log(params)
 
-    const [articolo, setNewArticolo] = useState([])
+    const [articolo, setNewArticolo] = useState<News | null>(null)
 
     const fetchNews = async () => {
         try {
@@ -35,11 +35,11 @@ const Details = () => {
 
     return (
         <Container>
-            <Card style={{ width: '13rem', height: '20rem' }} className='my-2'>
-                <Card.Img variant="top" src='' height={130} />
+            <Card className='my-2'>
+                <Card.Img variant="top" src={articolo?.imageUrl} height={330} />
                 <Card.Body>
-                    <Card.Title className='text-dark'></Card.Title>
-                    <Card.Text className='text-dark'>
+                    <Card.Title className='text-dark'>{articolo?.title}</Card.Title>
+                    <Card.Text className='text-dark'>{articolo?.summary}
                     </Card.Text>
                     <Link to={'/'} > <Button variant="primary">Torna alla Home!</Button></Link>
                 </Card.Body>
